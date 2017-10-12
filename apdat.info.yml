@@ -5,7 +5,40 @@ description: 'An admin site theme created to demonstrate paragraphs for the Aust
 package: Core
 version: VERSION
 core: 8.x
-
+libraries:
+ - seven/global-styling
+libraries-override:
+  system/base:
+    css:
+      component:
+        /core/themes/stable/css/system/components/system-status-counter.css: css/components/system-status-counter.css
+        /core/themes/stable/css/system/components/system-status-report-counters.css: css/components/system-status-report-counters.css
+        /core/themes/stable/css/system/components/system-status-report-general-info.css: css/components/system-status-report-general-info.css
+  core/drupal.vertical-tabs:
+    css:
+      component:
+        misc/vertical-tabs.css: false
+  core/jquery.ui:
+    css:
+      theme:
+        assets/vendor/jquery.ui/themes/base/theme.css: false
+  core/jquery.ui.dialog:
+    css:
+      component:
+        assets/vendor/jquery.ui/themes/base/dialog.css: false
+  classy/dialog:
+    seven/seven.drupal.dialog
+libraries-extend:
+  core/ckeditor:
+    - seven/ckeditor-dialog
+  core/drupal.vertical-tabs:
+    - seven/vertical-tabs
+  core/jquery.ui:
+    - seven/seven.jquery.ui
+  tour/tour-styling:
+    - seven/tour-styling
+quickedit_stylesheets:
+  - css/components/quickedit.css
 regions:
   header: 'Header'
   pre_content: 'Pre-content'
